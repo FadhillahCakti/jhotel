@@ -30,7 +30,7 @@ public class Pesanan
      */
     public double getBiaya()
     {
-     return 0; 
+     return biaya; 
     }
     
     /**
@@ -42,7 +42,7 @@ public class Pesanan
     public Customer getPelanggan()
     {
         // put your code here
-        return null;
+        return pelanggan;
     }
     
     /**
@@ -54,7 +54,7 @@ public class Pesanan
     public boolean getStatusDiproses()
     {
         // put your code here
-        return false;
+        return statusdiproses;
     }
     
     /**
@@ -65,7 +65,7 @@ public class Pesanan
      */
     public boolean getStatusSelesai()
     {
-        return false;// put your code here
+        return statusselesai;// put your code here
         
     }
     
@@ -77,7 +77,7 @@ public class Pesanan
      */
     public void setBiaya(double biaya)
     {
-        return 0;// put your code here
+        this.biaya = biaya;// put your code here
    }
     
     /**
@@ -88,7 +88,7 @@ public class Pesanan
      */
     public void getPelanggan(Customer pelanggan)
     {
-        return null;
+        return pelanggan;
     }
     
     /**
@@ -98,7 +98,7 @@ public class Pesanan
      */
     public void setStatusDiproses(boolean diproses)
     {
-        return false;
+        this.statusdiproses = statusdiproses;
     }
     
     /**
@@ -106,8 +106,4 @@ public class Pesanan
      *
      * @param  status selesai
      */
-    public void setStatusSelesai(boolean selesai)
-    {
-        return false;
-    }
-}
+    public void setStatusS
