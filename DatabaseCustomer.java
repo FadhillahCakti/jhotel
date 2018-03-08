@@ -1,30 +1,48 @@
-
 /**
- * Write a description of class DatabaseCustomer here.
+ *   Class DatabaseCustomer.
  *
  * @author Cakti Fadhillah
- * @version 0.0.1
+ * @version 1.2
+ * @since 8-3-18
  */
 public class DatabaseCustomer
 {
-    // instance variables - replace the example below with your own
-    private Customer[] list_customer;
 
+   private String[] list_customer;
+   
+   /**
+     * Menambah Customer
+     * @param baru Customer baru 
+     * @return Status Customer baru
+     */
+   
+   public boolean addCustomer(Customer baru){
+
+       
+       return false;
     
-    public boolean addCustomer(Customer baru)
-    {
-        return false;
     }
     
-
-    public boolean removeCustomer(int id)
-    {
-        return false;
+    /**
+     * Menghapus customer
+     * @param id Id dari pengguna yang akan dihapus
+     * @return Status penghapusan
+     */
+    
+   public boolean removeCustomer(int id){
+    
+       return false;
+    
     }
     
+    /**
+     * Menunjukkan Customer database
+     * @return String Menunjukkan nama customer
+     */
 
-    public Customer[] getCustomerDatabase(Customer baru)
-    {
-        return list_customer;
+   public String[] getCustomerDatabase(){
+       
+       return list_customer;
+    
     }
 }

@@ -1,109 +1,121 @@
 /**
- * Write a description of class Pesanan here.
+ *   Class Pesanan.
  *
  * @author Cakti Fadhillah
- * @version 0.0.
+ * @version 1.2
+ * @since 8-3-18
  */
+
 public class Pesanan
 {
-    // instance variables - replace the example below with your own
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
-    private String jenis_kamar;
-    private boolean isDiproses;
-    private boolean isSelesai;
-
+    private String Jenis_kamar;
+    private boolean isdiproses;
+    private boolean isselesai;
+    
     /**
-     * Constructor for objects of class Pesanan
+     * Constructor untuk Pesanan
      */
-    public Pesanan()
-    {
-        
-    }
-
-    /**
-     * getBiaya method
-     *
-     * @param  
-     * @return    biaya pesanan
-     */
-    public double getBiaya()
-    {
-     return biaya; 
+    public Pesanan (double biaya,Customer pelanggan){
+        this.biaya = biaya;
+        this.pelanggan = pelanggan;
+    
+    
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  
-     * @return    pelanggan/Customer
+     * Menunjukkan biaya
+     * @return Untuk mengassign biaya
      */
-    public Customer getPelanggan()
-    {
-        // put your code here
+
+    public double getBiaya (){
+    
+        return biaya;
+    }
+    
+    /**
+     * Menunjukkan pelanggan
+     * @return Untuk menambah pesanan dari pelanggan
+     */
+    public Customer getPelanggan(){
+
+    
         return pelanggan;
     }
     
     /**
-     * getStatusDiproses method
-     *
-     * @param  
-     * @return    status diproses/isDiproses
+     * Menunjukkan status proses
+     * @return Menampilkan status apakah true or false
      */
-    public boolean getStatusDiproses()
+
+    public boolean getStatusDiproses ()
     {
-        // put your code here
-        return statusdiproses;
+        return isdiproses;
+    } 
+    
+    /**
+     * Menunjukkan status selesai
+     * @return Menunjukkan status apakah selesai
+     */
+     public boolean getStatusSelesai (){
+    
+        return isselesai;
+    } 
+    
+    /**
+     * Menetapkan nilai biaya
+     * @param biaya menerima biaya untuk memasukkan pada variabel
+     */
+    public void setBiaya (double biaya){
+        
+        this.biaya = biaya;
+           
     }
     
     /**
-     * getStatusSelesai method
-     *
-     * @param  
-     * @return    status selesai/isSelesai
+     * Menetapkan pelanggan
+     * @param baru untuk menambah customer baru
      */
-    public boolean getStatusSelesai()
-    {
-        return statusselesai;// put your code here
+    public void setPelanggan(Customer baru){
+        
+        pelanggan = baru;
         
     }
     
     /**
-     * setBiaya method
-     *
-     * @param  biaya    biaya
-     * @return    
+     * Menetapkan status pemrosesan
+     * @param diroses Menetapkan status
      */
-    public void setBiaya(double biaya)
-    {
-        this.biaya = biaya;// put your code here
-   }
-    
-    /**
-     * getPelanggan method
-     *
-     * @param  pelanggan Customer
-     * @return    
-     */
-    public void getPelanggan(Customer pelanggan)
-    {
-        return pelanggan;
+    public void setStatusDiproses(boolean diproses){
+        
+        isdiproses = diproses;
     }
     
     /**
-     * setStatusDiproses method
-     *
-     * @param
+     * Menetapkan status penyelesaian
+     * @param selesai untuk menetapkan status selesai
      */
-    public void setStatusDiproses(boolean diproses)
-    {
-        this.statusdiproses = statusdiproses;
+    public void setStatusSelesai(boolean selesai){
+    
+        isselesai = selesai;
+        
     }
     
     /**
-     * setStatusSelesai method
-     *
-     * @param  status selesai
+     * Menunjukkan nama
+     * @return Untuk menampilkan nama
      */
-    public void setStatusS
+    
+    public String getNama(){
+    
+       return nama_pelanggan;
+    
+    }
+    
+    public void printData(){
+         System.out.println(biaya);
+        
+    }
+}

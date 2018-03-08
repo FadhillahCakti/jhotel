@@ -1,43 +1,76 @@
-
 /**
- * Write a description of class Customer here.
+ *   Class Customer.
  *
  * @author Cakti Fadhillah
- * @version 0.0.1
+ * @version 1.2
+ * @since 8-3-18
  */
-public class Customer 
+
+public class Customer
 {
-    // instance variables - replace the example below with your own
-    protected int id;
-    protected String nama;
 
-   
-    public Customer(int id, String nama)
-    {
-        return 0;
-    }
+     protected int id;
+     protected String nama;
+     
+     /**
+      * Constructor untuk Customer
+      */
+     
+     public Customer(int id,String nama){
+         this.id = id;
+         this.nama = nama;
+         
+     
+        }
+        
+        /**
+         * Menunjukkan Id
+         * @return Untuk menampilkan id
+         */   
+        
+     public int getid(){
 
+        return id;
+        
+        }
+        
+        /**
+         * Menunjukkan nama
+         * @return Untuk menampilkan nama 
+         */   
+        
 
-    public int getID()
-    {
-        return 0;
-    }
+     public String getNama(){
+
+        
+        return nama;
+        }
+        
+        /**
+         * Menetapkan Id
+         * @param id Untuk menetapkan id
+         */   
     
+     public void setID(int id){
+        
+         this.id = id;
 
-    public String getNama()
-    {
-        return null;
-    }
+       }
     
-
-    public void setID(int id)
-    {
-        return 0;
-    }
+        /**
+         * Menetapkan nama
+         * @param nama Untuk menetapkan nama
+         */  
+      
+     public void setNama(String nama){
+        
+        this.nama = nama;
+       }
+       
+     public void printData(){
+         System.out.println(nama);
     
-    public void setNama(String nama)
-    {
-        return null;
+     }
     }
+        
 
-   

@@ -1,44 +1,59 @@
-
 /**
- * Write a description of class DatabasePesanan here.
+ *   Class DatabasePesanan.
  *
  * @author Cakti Fadhillah
- * @version (a version number or a date)
+ * @version 1.2
+ * @since 8-3-18
  */
 public class DatabasePesanan
 {
-    // instance variables - replace the example below with your own
-    private Pesanan[] list_pesanan;
+    
+    private String[] list_pesanan;
+    
+    /**
+     * Menambah pesanan
+     * @return Untuk status apakah true atau tidak
+     */
+    public boolean addPesanan(Pesanan baru){
 
     
-    public boolean addPesanan(Pesanan baru)
-    {
-        // put your code here
         return false;
     }
     
+    /**
+     * Menghapus pesanan
+     * @return Untuk status apakah true atau tidak
+     */
 
-    public boolean removePesanan(int id)
-    {
- 
+    public boolean removePesanan(Pesanan pesan){
+
+    
         return false;
-    }
-    
-
-    public Pesanan getPesanan(Customer cust)
-    {
     
     }
     
+    /**
+     * Menunjukkan pesanan
+     * @return Untuk menambah pesanan
+     * @param cust untuk menerima informasi customer
+     */
 
-    public Pesanan[] getPesananDatabase(Customer baru)
-    {
-  
+    public Pesanan getPesanan(Customer cust){
+    
+       return null; 
     }
     
+     /**
+     * Menunjukkan database pesanan
+     * @return Untuk menampilkan databasepesanan
+     */
+    public String[] getPesananDatabase (){
+    
+        return null;
+    }
+    
+    public void pesananDibatalkan (Pesanan pesan){
+    
 
-    public void pesananDibatalkan(Pesanan pesan)
-    {
-        // put your code here
     }
 }
