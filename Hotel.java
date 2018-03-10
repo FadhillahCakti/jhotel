@@ -1,92 +1,96 @@
 /**
- *   Class Hotel.
+ * Class Hotel.
  *
  * @author Cakti Fadhillah
  * @version 1.2
- * @since 8-3-18
+ * @since 10-3-18
  */
 
 public class Hotel
 {
-  private String nama;
-  private Lokasi lokasi;
-  private int bintang;
-  
-  /**
-   * Constructor untuk Hotel
-   */
-  
-  public Hotel(String nama,Lokasi lokasi,int bintang){
-      this.nama = nama;
-      this.lokasi = lokasi;
-      this.bintang = bintang;
-    
-    
-    
-    }
-    
+    private String nama;
+    private Lokasi lokasi;
+    private int bintang;
+
     /**
-     * Menunjukkan bintang
-     * @return Menunjukkan nilai bintang
+     * 
+     * @param nama hotel dengan tipe String
+     * @param lokasi hotel dengan variable Lokasi
+     * @param Bintang hotel dengan tipe int
      */
-  public int getBintang(){
-    
-      return bintang;
+    public Hotel(String nama, Lokasi lokasi, int bintang)
+    {
+        this.nama = nama;
+        this.lokasi = lokasi;
+        this.bintang = bintang;
     }
-    
+
     /**
-     * Menunjukkan nama
-     * @return Menampilkan nama
+     * 
+     * @param   aksesor untuk Nama
+     * @return  Nama hotel dengan tipe String
      */
-    
-  public String getNama(){
-    
-      return nama;
+    public String getNama()
+    {
+        return this.nama;
     }
+
     /**
-     * Menunjukkan lokasi
-     * @return Menunjukkan nilai lokasi
+     * @param   Aksesor untuk Nama
+     * @return  lokasi hotel dengan variabel Lokasi
      */
-  public Lokasi getLokasi(){
-    
-      return lokasi;
+    public Lokasi getLokasi()
+    {
+        return this.lokasi;
     }
-    
+
     /**
-     * Menetapkan nama
-     * @param nama menetapkan nama
+     * 
+     * @param   Aksesor untuk Bintang
+     * @return  Nama hotel dengan tipe String
      */
-    
-  public void setNama(String nama){
-    
-      this.nama = nama;
+    public int getBintang()
+    {
+        return this.bintang;
     }
-    
+
     /**
-     * Menetapkan Lokasi
-     * @param lokasi menetapkan lokasi
+     * 
+     * @param  String Nama hotel
      */
-    
-  public void setLokasi(Lokasi lokasi){
-    
-      this.lokasi = lokasi;
-    
+    public void setNama(String nama)
+    {
+        this.nama = nama;
     }
-    
+
     /**
-     * Menetapkan bintang
-     * @param bintang menetapkan nilai bintang
+     * 
+     * @param  Lokasi lokasi hotel
      */
-    
-  public void setBintang(int bintang){
-    
-      this.bintang = bintang;
-    
+    public void setLokasi(Lokasi lokasi)
+    {
+        this.lokasi = lokasi;
     }
-    
-  public void printData(){
-      System.out.println(nama);
-    
-    
+
+    /**
+     * 
+     * @param  int bintang hotel
+     */
+    public void setBintang(int bintang)
+    {
+        this.bintang = bintang;
+    }
+
+    /**
+     * PrintData method
+     *
+     * method ini akan mencetak nama hotel di console
+     */
+    public void printData()
+    {
+        System.out.println("Hotel");
+        System.out.println("Nama Hotel : "+ this.nama);
+        System.out.println("Lokasi : "+ this.lokasi.getDesksipsi());
+        System.out.println("Bintang : "+ this.bintang);
     }
 }

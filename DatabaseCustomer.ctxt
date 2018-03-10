@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=DatabaseCustomer
-comment0.text=\r\n\ \ \ Class\ DatabaseCustomer.\r\n\r\n\ @author\ Cakti\ Fadhillah\r\n\ @version\ 1.2\r\n\ @since\ 8-3-18\r\n
+comment0.text=\r\n\ Class\ DatabaseCustomer.\r\n\r\n\ @author\ Cakti\ Fadhillah\r\n\ @version\ 1.2\r\n\ @since\ 10-3-18\r\n
 comment1.params=baru
 comment1.target=boolean\ addCustomer(Customer)
-comment1.text=\r\n\ Menambah\ Customer\r\n\ @param\ baru\ Customer\ baru\ \r\n\ @return\ Status\ Customer\ baru\r\n
+comment1.text=\r\n\ \r\n\ @param\ \ Customer\ pelanggan\ baru\ yang\ akan\ dimasukkan\r\n\ @return\ penambahan\ customer\ dengan\ tipe\ boolean\ \r\n
 comment2.params=id
 comment2.target=boolean\ removeCustomer(int)
-comment2.text=\r\n\ Menghapus\ customer\r\n\ @param\ id\ Id\ dari\ pengguna\ yang\ akan\ dihapus\r\n\ @return\ Status\ penghapusan\r\n
+comment2.text=\r\n\ \r\n\r\n\ @param\ \ int\ id\ pelanggan\ yang\ akan\ dihapus\r\n\ @return\ penghapusan\ customer\ dengan\ tipe\ boolean\ \r\n
 comment3.params=
-comment3.target=java.lang.String[]\ getCustomerDatabase()
-comment3.text=\r\n\ Menunjukkan\ Customer\ database\r\n\ @return\ String\ Menunjukkan\ nama\ customer\r\n
+comment3.target=java.util.ArrayList\ getCustomerDatabase()
+comment3.text=\r\n\r\n\ @return\ \ Customer\ list_customer\r\n
 numComments=4

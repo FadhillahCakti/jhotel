@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DatabaseHotel
+comment0.text=\r\n\ Kelas\ DatabaseHotel\ \r\n\r\n\ @author\ Cakti\ Fadhillah\r\n\ @version\ 1.2\r\n\ @since\ 10-3-18\r\n
+comment1.params=baru
+comment1.target=boolean\ addHotel(Hotel)
+comment2.params=id
+comment2.target=boolean\ removeHotel(int)
+comment3.params=
+comment3.target=java.util.ArrayList\ getHotelDatabase()
+numComments=4

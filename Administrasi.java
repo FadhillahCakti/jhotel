@@ -1,34 +1,72 @@
 
-/**
- * Write a description of class Administrasi here.
+/** 
+ * Class Administrasi
  *
  * @author Cakti Fadhillah
  * @version 1.2
- * @since 8-3-18
+ * @since 10-3-18
  */
 public class Administrasi
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Administrasi
-     */
     public Administrasi()
     {
-        // initialise instance variables
-        x = 0;
+
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
-        // put your code here
-        return x + y;
+        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(true);
+        pesan.setRoom(kamar);
+
+        roomAmbilPesanan(pesan, kamar);
+    }
+
+    public void roomAmbilPesanan(Pesanan pesan, Room kamar)
+    {
+        kamar.setStatusKamar(StatusKamar.Booked);
+        kamar.setPesanan(pesan);
+    }
+
+    public void roomLepasPesanan(Room kamar)
+    {
+        kamar.setStatusKamar(StatusKamar.Vacant);
+        kamar.setPesanan(null);
+    }
+
+    public void pesananDibatalkan(Room kamar)
+    {
+        kamar.getPesanan().setStatusSelesai(false);
+        kamar.getPesanan().setStatusDiproses(false);
+        kamar.setPesanan(null);
+
+        roomLepasPesanan(kamar);
+    }
+
+    public void pesananSelesai(Room kamar)
+    {
+        kamar.getPesanan().setStatusSelesai(true);
+        kamar.getPesanan().setStatusDiproses(false);
+        kamar.setPesanan(null);
+
+        roomLepasPesanan(kamar);
+    }
+
+    public void pesananDibatalkan(Pesanan pesan)
+    {
+        roomLepasPesanan(pesan.getRoom());
+
+        pesan.setStatusSelesai(false);
+        pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
+    }
+
+    public void pesananSelesai(Pesanan pesan)
+    {
+        roomLepasPesanan(pesan.getRoom());
+
+        pesan.setStatusSelesai(true);
+        pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
     }
 }

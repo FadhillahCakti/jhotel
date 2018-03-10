@@ -1,9 +1,9 @@
 /**
- *   Class Pesanan.
+ *Class Pesanan.
  *
  * @author Cakti Fadhillah
  * @version 1.2
- * @since 8-3-18
+ * @since 10-3-18
  */
 
 public class Pesanan
@@ -11,111 +11,178 @@ public class Pesanan
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
-    private String Jenis_kamar;
-    private boolean isdiproses;
-    private boolean isselesai;
-    
+    private TipeKamar tipe_kamar;
+    private boolean isDiproses;
+    private boolean isSelesai;
+    private Room kamar;
+
     /**
-     * Constructor untuk Pesanan
+     * Constructor dari kelas Pesanan
+     * 
+     * @param   biaya pesanan dengan tipe double
+     * @param   pelanggan dengan hub tipe Customer
      */
-    public Pesanan (double biaya,Customer pelanggan){
+    public Pesanan(double biaya, Customer pelanggan)
+    {
         this.biaya = biaya;
         this.pelanggan = pelanggan;
-    
-    
+        this.nama_pelanggan = null;
+        this.tipe_kamar = null;
+        this.isDiproses = false;
+        this.isSelesai = false;
+        this.kamar = kamar;
     }
-    
-    /**
-     * Menunjukkan biaya
-     * @return Untuk mengassign biaya
-     */
 
-    public double getBiaya (){
-    
-        return biaya;
-    }
-    
     /**
-     * Menunjukkan pelanggan
-     * @return Untuk menambah pesanan dari pelanggan
+     * 
+     * @param     accessor untuk variable biaya
+     * @return    biaya pesanan dengan tipe double
      */
-    public Customer getPelanggan(){
-
-    
-        return pelanggan;
-    }
-    
-    /**
-     * Menunjukkan status proses
-     * @return Menampilkan status apakah true or false
-     */
-
-    public boolean getStatusDiproses ()
+    public double getBiaya()
     {
-        return isdiproses;
-    } 
+        return this.biaya;
+    }
     
     /**
-     * Menunjukkan status selesai
-     * @return Menunjukkan status apakah selesai
+     * @param     accessor untuk variable pelanggan
+     * @return    pelanggan pesanan dengan tipe Pesanan ini
+     * 
      */
-     public boolean getStatusSelesai (){
-    
-        return isselesai;
-    } 
+    public Customer getPelanggan()
+    {
+        return this.pelanggan;
+    }
+
+    /**
+     * @param     accessor untuk Nama Pelanggan 
+     * @return    Nama Pelanggan dengan tipe string
+     * 
+     */
+    public String getNamaPelanggan()
+    {
+        return this.nama_pelanggan;
+    }
+
+    /**
+     * @param     accessor untuk Tipe Kamar
+     * @return    Tipe Kamar dengan variabel tipe kamar
+     * 
+     */
+    public TipeKamar getTipeKamar()
+    {
+        return this.tipe_kamar;
+    }
     
     /**
-     * Menetapkan nilai biaya
-     * @param biaya menerima biaya untuk memasukkan pada variabel
+     * @param     accessor untuk Status Diproses
+     * @return    Status Diproses dengan tipe Boolean
+     *
      */
-    public void setBiaya (double biaya){
-        
+    public boolean getStatusDiproses()
+    {
+        return this.isDiproses;
+    }
+    
+    /**
+     * @param     accessor untuk Status Diproses
+     * @return    Status Diproses dengan tipe Boolean
+     * 
+     */
+    public boolean getStatusSelesai()
+    {
+        return this.isSelesai;
+    }
+
+    /**
+     * @param     accessor untuk Status Diproses
+     * @return    pelanggan pesanan dengan tipe Pesanan ini 
+     * 
+     */
+    public Room getRoom()
+    {
+        return this.kamar;
+    }
+    
+    /**
+     * @param     mutator untuk Biaya
+     * @return    biaya Pesanan dengan tipe biaya ini 
+     * 
+     */
+    public void setBiaya(double biaya)
+    {
         this.biaya = biaya;
-           
     }
     
     /**
-     * Menetapkan pelanggan
-     * @param baru untuk menambah customer baru
+     * @param     accessor untuk Pelanggan
+     * @return    pelanggan pesanan dengan tipe Pesanan ini 
+     * 
      */
-    public void setPelanggan(Customer baru){
-        
-        pelanggan = baru;
-        
+    public void setPelanggan(Customer pelanggan)
+    {
+        this.pelanggan = pelanggan;
+    }
+
+    /**
+     * @param     mutator untuk Nama Pelanggan
+     * @return    nama pelanggan pesanan dengan tipe Nama Pelanggan ini 
+     * 
+     */
+    public void setNamaPelanggan(String nama_pelanggan)
+    {
+        this.nama_pelanggan = nama_pelanggan;
+    }
+
+    /**
+     * @param     mutator untuk Tipe Kamar
+     * @return    tipe kamar pesanan dengan Tipe Kamar ini 
+     * 
+     */
+    public void setTipeKamar(TipeKamar tipe_kamar)
+    {
+        this.tipe_kamar = tipe_kamar;
     }
     
     /**
-     * Menetapkan status pemrosesan
-     * @param diroses Menetapkan status
+     * @param     mutator untuk Status Diproses
+     * @return    Status Diproses dengan tipe Boolean
+     * 
      */
-    public void setStatusDiproses(boolean diproses){
-        
-        isdiproses = diproses;
+    public void setStatusDiproses(boolean diproses)
+    {
+        this.isDiproses = diproses;
     }
     
     /**
-     * Menetapkan status penyelesaian
-     * @param selesai untuk menetapkan status selesai
+     * @param     mutator untuk Status Selesai
+     * @return    Status Selesai dengan tipe Boolean
+     * 
      */
-    public void setStatusSelesai(boolean selesai){
-    
-        isselesai = selesai;
-        
+    public void setStatusSelesai(boolean selesai)
+    {
+        this.isSelesai = selesai;
     }
-    
+
     /**
-     * Menunjukkan nama
-     * @return Untuk menampilkan nama
+     * @param     mutator untuk Room
+     * @return    tipe kamar pesanan dengan Tipe Kamar ini
      */
-    
-    public String getNama(){
-    
-       return nama_pelanggan;
-    
+    public void setRoom(Room kamar)
+    {
+        this.kamar = kamar;
     }
-    
-    public void printData(){
-         System.out.println(biaya);
-        
+
+    /**
+     * PrintData method
+     *
+     * method ini akan mencetak biaya pesanan
+     */
+    public void printData()
+    {
+        System.out.println("Pesanan");
+        System.out.println("Nama Pelanggan : "+ this.nama_pelanggan);
+        System.out.println("Tipe Kamar : "+ this.tipe_kamar);
+        System.out.println("Status Diproses : "+ this.isDiproses);
+        System.out.println("Status Selesai : "+ this.isSelesai);
     }
 }

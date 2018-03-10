@@ -1,76 +1,70 @@
 /**
- *   Class Customer.
+ * Class Customer.
  *
  * @author Cakti Fadhillah
  * @version 1.2
- * @since 8-3-18
+ * @since 10-3-18
  */
-
 public class Customer
 {
-
-     protected int id;
-     protected String nama;
-     
-     /**
-      * Constructor untuk Customer
-      */
-     
-     public Customer(int id,String nama){
-         this.id = id;
-         this.nama = nama;
-         
-     
-        }
-        
-        /**
-         * Menunjukkan Id
-         * @return Untuk menampilkan id
-         */   
-        
-     public int getid(){
-
-        return id;
-        
-        }
-        
-        /**
-         * Menunjukkan nama
-         * @return Untuk menampilkan nama 
-         */   
-        
-
-     public String getNama(){
-
-        
-        return nama;
-        }
-        
-        /**
-         * Menetapkan Id
-         * @param id Untuk menetapkan id
-         */   
-    
-     public void setID(int id){
-        
-         this.id = id;
-
-       }
-    
-        /**
-         * Menetapkan nama
-         * @param nama Untuk menetapkan nama
-         */  
-      
-     public void setNama(String nama){
-        
+    protected int id;
+    protected String nama;
+    /**
+     * @param int id dari Customer
+     * @param String dari nama Customer
+     */
+    public Customer(int id, String nama)
+    {
+        this.id = id;
         this.nama = nama;
-       }
-       
-     public void printData(){
-         System.out.println(nama);
-    
-     }
     }
-        
 
+    /**
+     * 
+     * @return  int id pelanggan
+     */
+    public int getID()
+    {
+        return id;
+    }
+    
+    /**
+     * 
+     * @return  String nama
+     */
+    public String getNama()
+    {
+        return nama;
+    }
+    
+    /**
+     *
+     * @param  int id pelanggan
+     */
+    public void setID(int id)
+    {
+        this.id = id;
+    }
+    
+     /**
+     * 
+     *
+     * @param  String Nama pelanggan
+     */
+    public void setNama(String nama)
+    {
+        this.nama = nama;
+    }
+
+     /**
+     * PrintData method
+     *
+     * method ini akan mencetak nama pelanggan di console
+     */
+    public void printData()
+    {
+        System.out.println("Customer");
+        System.out.println("ID : "+ this.id);
+        System.out.println("Nama : "+ this.nama);
+    }
+}

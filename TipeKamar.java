@@ -1,10 +1,10 @@
 
 /**
- * Enumeration class TipeKamar - write a description of the enum class here
+ * Enumerasi Class TipeKamar
  *
  * @author Cakti Fadhillah
  * @version 1.2
- * @since 8-3-18
+ * @since 10-3-18
  */
 public enum TipeKamar
 {

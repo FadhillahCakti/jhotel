@@ -1,48 +1,47 @@
+import java.util.ArrayList;
 /**
- *   Class DatabaseCustomer.
+ * Class DatabaseCustomer.
  *
  * @author Cakti Fadhillah
  * @version 1.2
- * @since 8-3-18
+ * @since 10-3-18
  */
 public class DatabaseCustomer
 {
+    private ArrayList<Customer> list_customer;
 
-   private String[] list_customer;
-   
-   /**
-     * Menambah Customer
-     * @param baru Customer baru 
-     * @return Status Customer baru
+    /**
+     * 
+     * @param  Customer pelanggan baru yang akan dimasukkan
+     * @return penambahan customer dengan tipe boolean 
      */
-   
-   public boolean addCustomer(Customer baru){
-
-       
-       return false;
-    
+    public boolean addCustomer(Customer baru)
+    {
+        return list_customer.add(baru);
     }
     
     /**
-     * Menghapus customer
-     * @param id Id dari pengguna yang akan dihapus
-     * @return Status penghapusan
+     * 
+     *
+     * @param  int id pelanggan yang akan dihapus
+     * @return penghapusan customer dengan tipe boolean 
      */
-    
-   public boolean removeCustomer(int id){
-    
-       return false;
-    
+    public boolean removeCustomer(int id)
+    {
+        for (Customer cust : list_customer){
+            if (cust.id == id){
+                return list_customer.remove(cust);
+            }
+        }
+        return false;
     }
     
     /**
-     * Menunjukkan Customer database
-     * @return String Menunjukkan nama customer
+     *
+     * @return  Customer list_customer
      */
-
-   public String[] getCustomerDatabase(){
-       
-       return list_customer;
-    
+    public ArrayList<Customer> getCustomerDatabase()
+    {
+        return list_customer;
     }
 }
