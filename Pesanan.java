@@ -9,9 +9,8 @@
 public class Pesanan
 {
     private double biaya;
+    private double jumlahHari;
     private Customer pelanggan;
-    private String nama_pelanggan;
-    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -22,12 +21,11 @@ public class Pesanan
      * @param   biaya pesanan dengan tipe double
      * @param   pelanggan dengan hub tipe Customer
      */
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {
         this.biaya = biaya;
+        this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        this.nama_pelanggan = null;
-        this.tipe_kamar = null;
         this.isDiproses = false;
         this.isSelesai = false;
         this.kamar = kamar;
@@ -44,6 +42,16 @@ public class Pesanan
     }
     
     /**
+     * 
+     * @param     accessor untuk variable biaya
+     * @return    biaya pesanan dengan tipe double
+     */
+    public double getjumlahHari()
+    {
+        return this.jumlahHari;
+    }
+
+    /**
      * @param     accessor untuk variable pelanggan
      * @return    pelanggan pesanan dengan tipe Pesanan ini
      * 
@@ -53,26 +61,6 @@ public class Pesanan
         return this.pelanggan;
     }
 
-    /**
-     * @param     accessor untuk Nama Pelanggan 
-     * @return    Nama Pelanggan dengan tipe string
-     * 
-     */
-    public String getNamaPelanggan()
-    {
-        return this.nama_pelanggan;
-    }
-
-    /**
-     * @param     accessor untuk Tipe Kamar
-     * @return    Tipe Kamar dengan variabel tipe kamar
-     * 
-     */
-    public TipeKamar getTipeKamar()
-    {
-        return this.tipe_kamar;
-    }
-    
     /**
      * @param     accessor untuk Status Diproses
      * @return    Status Diproses dengan tipe Boolean
@@ -110,7 +98,7 @@ public class Pesanan
      */
     public void setBiaya(double biaya)
     {
-        this.biaya = biaya;
+        this.biaya = this.kamar.getDailyTariff() * this.jumlahHari;
     }
     
     /**
@@ -118,19 +106,9 @@ public class Pesanan
      * @return    pelanggan pesanan dengan tipe Pesanan ini 
      * 
      */
-    public void setPelanggan(Customer pelanggan)
+    public void setjumlahHari(double jumlahHari)
     {
-        this.pelanggan = pelanggan;
-    }
-
-    /**
-     * @param     mutator untuk Nama Pelanggan
-     * @return    nama pelanggan pesanan dengan tipe Nama Pelanggan ini 
-     * 
-     */
-    public void setNamaPelanggan(String nama_pelanggan)
-    {
-        this.nama_pelanggan = nama_pelanggan;
+        this.jumlahHari = jumlahHari;
     }
 
     /**
@@ -138,9 +116,9 @@ public class Pesanan
      * @return    tipe kamar pesanan dengan Tipe Kamar ini 
      * 
      */
-    public void setTipeKamar(TipeKamar tipe_kamar)
+    public void setPelanggan(Customer pelanggan)
     {
-        this.tipe_kamar = tipe_kamar;
+        this.pelanggan = pelanggan;
     }
     
     /**
@@ -180,9 +158,11 @@ public class Pesanan
     public void printData()
     {
         System.out.println("Pesanan");
-        System.out.println("Nama Pelanggan : "+ this.nama_pelanggan);
-        System.out.println("Tipe Kamar : "+ this.tipe_kamar);
+        System.out.println("Biaya : "+ this.biaya);
+        System.out.println("JumlahHari : "+ this.jumlahHari);
+        System.out.println("Pelanggan :" + this.pelanggan);
         System.out.println("Status Diproses : "+ this.isDiproses);
         System.out.println("Status Selesai : "+ this.isSelesai);
+        System.out.println("Room : "+ this.kamar);     
     }
 }

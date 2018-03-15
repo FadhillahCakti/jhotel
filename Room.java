@@ -6,36 +6,28 @@
  * @version 1.2
  * @since 10-3-18
  */
-public class Room
+public abstract class Room
 {
     private Hotel hotel;
-    private int id;
     private String nomor_kamar;
-    private boolean isAvalable;
-    private Customer customer;
-    private double dailyTariff;
+    protected boolean isAvalable;
+    protected double dailyTariff;
     private StatusKamar status_kamar;
     private Pesanan pesan;
     
-    public Room(Hotel hotel, String nomor_kamar, boolean isAvalable, Customer customer, double dailyTariff
-    , StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvalable, StatusKamar status_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
         this.isAvalable = isAvalable;
-        this.customer = customer;
         this.dailyTariff = dailyTariff;
         this.status_kamar = status_kamar;
+        this.pesan = pesan;
     }
 
     public Hotel getHotel()
     {
         return this.hotel;
-    }
-
-    public int getID()
-    {
-        return this.id;
     }
 
     public String getNomorKamar()
@@ -46,11 +38,6 @@ public class Room
     public boolean getStatusAvailable()
     {
         return this.isAvalable;
-    }
-
-    public Customer getCustomer()
-    {
-        return this.customer;
     }
 
     public double getDailyTariff()
@@ -69,14 +56,11 @@ public class Room
         return this.pesan;
     }
 
+    public abstract TipeKamar getTipeKamar ();
+
     public void setHotel(Hotel hotel)
     {
         this.hotel = hotel;
-    }
-
-    public void setID(int id)
-    {
-        this.id = id;
     }
 
     public void setNomorKamar(String nomor_kamar)
@@ -89,16 +73,10 @@ public class Room
         this.isAvalable = isAvalable;
     }
 
-    public void setCustomer(Customer customer)
-    {
-        this.customer = customer;
-    }
-
-    public void setDailyTariff(Double dailyTariff)
+    public void setDailyTariff (double dailyTariff)
     {
         this.dailyTariff = dailyTariff;
     }
-
 
     public void setStatusKamar(StatusKamar status_kamar)
     {
@@ -116,8 +94,8 @@ public class Room
         System.out.println("Nama Hotel : "+ this.hotel.getNama());
         System.out.println("Nomor Kamar : "+ this.nomor_kamar);
         System.out.println("Tersedia : "+ this.isAvalable);
-        System.out.println("Pelanggan : "+ this.customer.getNama());
         System.out.println("Harga : "+ this.dailyTariff);
         System.out.println("Status kamar : "+ this.status_kamar);
+        System.out.println("Pesanan : "+ this.pesan);
     }
 }   
