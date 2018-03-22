@@ -80,8 +80,7 @@ public class Hotel
     {
         this.bintang = bintang;
     }
-
-    /**
+   /**
      * PrintData method
      *
      * method ini akan mencetak nama hotel di console
@@ -92,5 +91,10 @@ public class Hotel
         System.out.println("Nama Hotel : "+ this.nama);
         System.out.println("Lokasi : "+ this.lokasi.getDesksipsi());
         System.out.println("Bintang : "+ this.bintang);
+    }
+
+    public String toString()
+    {
+        return "Hotel\nNama Hotel : "+ this.nama + "\nLokasi : "+this.lokasi.getDesksipsi()+"\nBintang : "+this.bintang+"\n";
     }
 }

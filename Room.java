@@ -10,7 +10,7 @@ public abstract class Room
 {
     private Hotel hotel;
     private String nomor_kamar;
-    protected boolean isAvalable;
+    private boolean isAvalable;
     protected double dailyTariff;
     private StatusKamar status_kamar;
     private Pesanan pesan;
@@ -87,15 +87,30 @@ public abstract class Room
     {
         this.pesan = pesan;
     }
-
     public void printData()
     {
         System.out.println("Room");
         System.out.println("Nama Hotel : "+ this.hotel.getNama());
         System.out.println("Nomor Kamar : "+ this.nomor_kamar);
         System.out.println("Tersedia : "+ this.isAvalable);
-        System.out.println("Harga : "+ this.dailyTariff);
+        System.out.println("Daily Tariff : Rp."+ this.dailyTariff);
         System.out.println("Status kamar : "+ this.status_kamar);
-        System.out.println("Pesanan : "+ this.pesan);
+        System.out.println("Tipe kamar : "+ this.getTipeKamar());
+    }
+
+    public String toString()
+    {
+        String s =  "\nNama Hotel   : "+this.hotel.getNama()+
+                    "\nTipe Kamar   : "+this.getTipeKamar()+
+                    "\nHarga        : "+this.dailyTariff+
+                    "\nStatus Kamar : "+this.status_kamar+
+                    "\n";
+
+        if (!isAvalable)
+        {
+            s +=    "Pelanggan      : "+this.pesan.getPelanggan().getNama()+"\n";
+        }
+        
+        return s;
     }
 }   

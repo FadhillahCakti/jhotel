@@ -1,3 +1,7 @@
+import java.util.*;
+import java.util.Date;
+import java.util.regex.*;
+
 /**
  *Class Pesanan.
  *
@@ -14,6 +18,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
 
     /**
      * Constructor dari kelas Pesanan
@@ -29,6 +34,7 @@ public class Pesanan
         this.isDiproses = false;
         this.isSelesai = false;
         this.kamar = kamar;
+        this.tanggalPesan = tanggalPesan;
     }
 
     /**
@@ -92,6 +98,16 @@ public class Pesanan
     }
     
     /**
+     * @param     accessor untuk Status Diproses
+     * @return    pelanggan pesanan dengan tipe Pesanan ini 
+     * 
+     */
+    public Date getTanggalPesan()
+    {
+        return this.tanggalPesan;
+    }
+    
+    /**
      * @param     mutator untuk Biaya
      * @return    biaya Pesanan dengan tipe biaya ini 
      * 
@@ -151,6 +167,15 @@ public class Pesanan
     }
 
     /**
+     * @param     mutator untuk Room
+     * @return    tipe kamar pesanan dengan Tipe Kamar ini
+     */
+    public void setTanggalPesan(Date tanggalPesan)
+    {
+        this.tanggalPesan = tanggalPesan;
+    }
+    
+    /**
      * PrintData method
      *
      * method ini akan mencetak biaya pesanan
@@ -163,6 +188,7 @@ public class Pesanan
         System.out.println("Pelanggan :" + this.pelanggan);
         System.out.println("Status Diproses : "+ this.isDiproses);
         System.out.println("Status Selesai : "+ this.isSelesai);
-        System.out.println("Room : "+ this.kamar);     
+        System.out.println("Room : "+ this.kamar); 
+        System.out.println("Date : "+ this.tanggalPesan); 
     }
 }

@@ -25,4 +25,6 @@ comment7.text=\r\n\ \r\n\ @param\ \ String\ deskripsi\ lokasi\r\n
 comment8.params=
 comment8.target=void\ printData()
 comment8.text=\r\n\ PrintData\ method\r\n\r\n\ method\ ini\ akan\ mencetak\ deskripsi\ lokasi\ di\ console\r\n
-numComments=9
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

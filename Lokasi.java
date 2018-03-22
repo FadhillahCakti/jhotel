@@ -83,7 +83,7 @@ public class Lokasi
         this.deskripsiLokasi = deskripsiLokasi;
     }
 
-    /**
+   /**
      * PrintData method
      *
      * method ini akan mencetak deskripsi lokasi di console
@@ -94,5 +94,10 @@ public class Lokasi
         System.out.println("Koordinat X : "+ this.x_coord);
         System.out.println("Koordinat Y : "+ this.y_coord);
         System.out.println("Deskripsi : "+ this.deskripsiLokasi);
+    }
+
+    public String toString()
+    {
+        return "Lokasi\nKoordinat X : "+this.x_coord+"\nKoordinat Y : "+this.y_coord+"\nDekripsi : "+this.deskripsiLokasi+"\n";
     }
 }
