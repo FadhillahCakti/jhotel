@@ -9,7 +9,7 @@ public class Jhotel
     {
         Lokasi lokasi1 = new Lokasi (30,50,"Jl. Pisang");
         Hotel hotel1 = new Hotel ("Mangga Hotel", lokasi1, 1);
-        Customer customer1 = new Customer (10, "Rambutan");
+        Customer customer1 = new Customer (10, "Rambutan", new GregorianCalendar().getTime());
         Room room1 = new SingleRoom (hotel1, "21", true, StatusKamar.Vacant);
         Pesanan pesanan1 = new Pesanan (1,customer1, room1);
         Administrasi administrasi1 = new Administrasi ();
@@ -51,6 +51,7 @@ public class Jhotel
         {
             System.out.println ("Salah, Bukan Double Room");
         }
+    System.out.println (customer1.toString());
     }
     public Jhotel()
     {
