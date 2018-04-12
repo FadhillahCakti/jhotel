@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class DatabaseHotel
 {
     private ArrayList<Hotel> list_hotel;
+    private int LAST_HOTEL_ID;
 
     public boolean addHotel(Hotel baru)
     {

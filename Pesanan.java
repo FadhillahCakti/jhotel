@@ -12,9 +12,11 @@ import java.util.regex.*;
 
 public class Pesanan
 {
+    private int id;
     private double biaya;
     private double jumlahHari;
     private Customer pelanggan;
+    private boolean isAktif;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -28,13 +30,23 @@ public class Pesanan
      */
     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {
+        this.aktif = true;
         this.biaya = biaya;
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.isDiproses = false;
         this.isSelesai = false;
         this.kamar = kamar;
-        this.tanggalPesan = tanggalPesan;
+        this.tanggalPesan = new GregorianCalendar.getTime();
+    }
+/**
+     * 
+     * @param     accessor untuk variable biaya
+     * @return    biaya pesanan dengan tipe double
+     */
+    public int getID()
+    {
+        return this.id;
     }
 
     /**
@@ -89,6 +101,17 @@ public class Pesanan
 
     /**
      * @param     accessor untuk Status Diproses
+     * @return    Status Diproses dengan tipe Boolean
+     * 
+     */
+    public boolean getStatusAktif()
+    {
+        return this.isAktif;
+    }
+
+
+    /**
+     * @param     accessor untuk Status Diproses
      * @return    pelanggan pesanan dengan tipe Pesanan ini 
      * 
      */
@@ -116,7 +139,17 @@ public class Pesanan
     {
         this.biaya = this.kamar.getDailyTariff() * this.jumlahHari;
     }
-    
+
+    /**
+     * @param     accessor untuk Pelanggan
+     * @return    pelanggan pesanan dengan tipe Pesanan ini 
+     * 
+     */
+    public void setID(int id)
+    {
+        this.jumlahHari = jumlahHari;
+    }
+
     /**
      * @param     accessor untuk Pelanggan
      * @return    pelanggan pesanan dengan tipe Pesanan ini 
@@ -158,6 +191,16 @@ public class Pesanan
     }
 
     /**
+     * @param     mutator untuk Status Selesai
+     * @return    Status Selesai dengan tipe Boolean
+     * 
+     */
+    public void setStatusAktif(boolean aktif)
+    {
+        this.isAktif = aktif;
+    }
+
+    /**
      * @param     mutator untuk Room
      * @return    tipe kamar pesanan dengan Tipe Kamar ini
      */
@@ -183,6 +226,7 @@ public class Pesanan
     public void printData()
     {
         System.out.println("Pesanan");
+        System.out.println("ID :"+ this.id);
         System.out.println("Biaya : "+ this.biaya);
         System.out.println("JumlahHari : "+ this.jumlahHari);
         System.out.println("Pelanggan :" + this.pelanggan);

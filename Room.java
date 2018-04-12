@@ -10,16 +10,14 @@ public abstract class Room
 {
     private Hotel hotel;
     private String nomor_kamar;
-    private boolean isAvalable;
     protected double dailyTariff;
     private StatusKamar status_kamar;
     private Pesanan pesan;
     
-    public Room(Hotel hotel, String nomor_kamar, boolean isAvalable, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
-        this.isAvalable = isAvalable;
         this.dailyTariff = dailyTariff;
         this.status_kamar = status_kamar;
         this.pesan = pesan;
@@ -35,11 +33,7 @@ public abstract class Room
         return this.nomor_kamar;
     }
 
-    public boolean getStatusAvailable()
-    {
-        return this.isAvalable;
-    }
-
+    
     public double getDailyTariff()
     {
         return this.dailyTariff;
@@ -68,11 +62,6 @@ public abstract class Room
         this.nomor_kamar = nomor_kamar;
     }
 
-    public void setStatusAvailable(boolean isAvalable)
-    {
-        this.isAvalable = isAvalable;
-    }
-
     public void setDailyTariff (double dailyTariff)
     {
         this.dailyTariff = dailyTariff;
@@ -92,7 +81,6 @@ public abstract class Room
         System.out.println("Room");
         System.out.println("Nama Hotel : "+ this.hotel.getNama());
         System.out.println("Nomor Kamar : "+ this.nomor_kamar);
-        System.out.println("Tersedia : "+ this.isAvalable);
         System.out.println("Daily Tariff : Rp."+ this.dailyTariff);
         System.out.println("Status kamar : "+ this.status_kamar);
         System.out.println("Tipe kamar : "+ this.getTipeKamar());
