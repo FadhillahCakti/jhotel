@@ -18,37 +18,31 @@ public class Administrasi
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(true);
         pesan.setRoom(kamar);
-
-        roomAmbilPesanan(pesan, kamar);
+        pesan.setBiaya();
+        roomAmbilPesanan(kamar);
     }
 
-    public void roomAmbilPesanan(Pesanan pesan, Room kamar)
+    public void roomAmbilPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Booked);
-        kamar.setPesanan(pesan);
     }
 
     public void roomLepasPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Vacant);
-        kamar.setPesanan(null);
     }
 
     public void pesananDibatalkan(Room kamar)
     {
-        kamar.getPesanan().setStatusSelesai(false);
-        kamar.getPesanan().setStatusDiproses(false);
-        kamar.setPesanan(null);
-
+        kamar.getPesanan(kamar).setStatusSelesai(false);
+        kamar.getPesanan(kamar).setStatusDiproses(false);
         roomLepasPesanan(kamar);
     }
 
     public void pesananSelesai(Room kamar)
     {
-        kamar.getPesanan().setStatusSelesai(true);
-        kamar.getPesanan().setStatusDiproses(false);
-        kamar.setPesanan(null);
-
+        kamar.getPesanan(kamar).setStatusSelesai(true);
+        kamar.getPesanan(kamar).setStatusDiproses(false);
         roomLepasPesanan(kamar);
     }
 
@@ -58,7 +52,7 @@ public class Administrasi
 
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
+        pesan.setStatusAktif(false);
     }
 
     public void pesananSelesai(Pesanan pesan)
@@ -67,6 +61,6 @@ public class Administrasi
 
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
+        pesan.setStatusAktif(false);
     }
 }

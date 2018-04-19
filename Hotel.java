@@ -8,27 +8,32 @@
 
 public class Hotel
 {
+    //instance variable
+    private int id;
     private String nama;
     private Lokasi lokasi;
     private int bintang;
 
     /**
+     * Constructor for objects of class Hotel
      * 
-     * @param nama hotel dengan tipe String
-     * @param lokasi hotel dengan variable Lokasi
-     * @param Bintang hotel dengan tipe int
+     * @param String nama hotel
+     * @param Lokasi Lokasi hotel
+     * @param int Bintang hotel
      */
     public Hotel(String nama, Lokasi lokasi, int bintang)
     {
         this.nama = nama;
         this.lokasi = lokasi;
         this.bintang = bintang;
+        this.id = DatabaseHotel.getLastHotelID() + 1;
     }
 
     /**
-     * 
-     * @param   aksesor untuk Nama
-     * @return  Nama hotel dengan tipe String
+     * getNama method
+     * accessor objek ini untuk variable nama
+     *
+     * @return  String Nama hotel
      */
     public String getNama()
     {
@@ -36,8 +41,10 @@ public class Hotel
     }
 
     /**
-     * @param   Aksesor untuk Nama
-     * @return  lokasi hotel dengan variabel Lokasi
+     * getLokasi method
+     * accessor objek ini untuk variable lokasi
+     *
+     * @return  Lokasi lokasi hotel
      */
     public Lokasi getLokasi()
     {
@@ -45,17 +52,30 @@ public class Hotel
     }
 
     /**
-     * 
-     * @param   Aksesor untuk Bintang
-     * @return  Nama hotel dengan tipe String
+     * getBintang method
+     * accessor objek ini untuk variable bintang
+     *
+     * @return  String Nama hotel
      */
     public int getBintang()
     {
         return this.bintang;
     }
 
+    public int getID()
+    {
+        return this.id;
+    }
+
+    public void setID(int id)
+    {
+        this.id = id;
+    }
+
     /**
-     * 
+     * setNama method
+     * mutator objek ini untuk variable nama
+     *
      * @param  String Nama hotel
      */
     public void setNama(String nama)
@@ -64,7 +84,9 @@ public class Hotel
     }
 
     /**
-     * 
+     * setLokasi method
+     * mutator objek ini untuk variable lokasi
+     *
      * @param  Lokasi lokasi hotel
      */
     public void setLokasi(Lokasi lokasi)
@@ -73,14 +95,17 @@ public class Hotel
     }
 
     /**
-     * 
+     * setBintang method
+     * mutator objek ini untuk variable bintang
+     *
      * @param  int bintang hotel
      */
     public void setBintang(int bintang)
     {
         this.bintang = bintang;
     }
-   /**
+
+    /**
      * PrintData method
      *
      * method ini akan mencetak nama hotel di console

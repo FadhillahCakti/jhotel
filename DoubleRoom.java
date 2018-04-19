@@ -11,9 +11,9 @@ public class DoubleRoom extends Room
     private Customer customer2;
     private static final TipeKamar TIPE_KAMAR = TipeKamar.Double;
 
-    public DoubleRoom(Hotel hotel, String nomor_kamar, boolean isAvalable, StatusKamar status_kamar)
+    public DoubleRoom(Hotel hotel, String nomor_kamar)
     {
-        super(hotel, nomor_kamar, isAvalable, status_kamar);
+        super(hotel, nomor_kamar);
     }
 
     @Override

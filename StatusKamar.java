@@ -6,7 +6,19 @@
  * @version 1.2
  * @since 10-3-18
  */
-public enum StatusKamar
+enum StatusKamar
 {
-    Booked, Proccessed, Vacant;
+    //Booked, Processed, Vacant;
+    Booked("Booked"), Processed("Processed"), Vacant("Vacant");
+    private String deskripsi;
+
+    private StatusKamar(String s)
+    {
+        this.deskripsi = s;
+    }
+
+    public String  toString()
+    {
+        return this.deskripsi;
+    }
 }

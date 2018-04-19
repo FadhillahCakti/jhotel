@@ -10,9 +10,9 @@ public class PremiumRoom extends Room
     private static final double DISCOUNT = 0.3;
     private static final TipeKamar TIPE_KAMAR = TipeKamar.Premium;
 
-    public PremiumRoom(Hotel hotel, String nomor_kamar, boolean isAvalable, StatusKamar status_kamar)
+    public PremiumRoom(Hotel hotel, String nomor_kamar)
     {
-        super(hotel, nomor_kamar, isAvalable, status_kamar);
+        super(hotel, nomor_kamar);
     }
 
     @Override
@@ -28,6 +28,6 @@ public class PremiumRoom extends Room
 
     public void setDailyTariff(double dailyTariff)
     {
-        this.dailyTariff = dailyTariff * DISCOUNT;
+        this.dailyTariff = dailyTariff * (1- DISCOUNT);
     }
 }

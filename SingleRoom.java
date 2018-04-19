@@ -9,9 +9,9 @@ public class SingleRoom extends Room
 {
     private static final TipeKamar TIPE_KAMAR = TipeKamar.Single;
 
-    public SingleRoom(Hotel hotel, String nomor_kamar, boolean isAvalable, StatusKamar status_kamar)
+    public SingleRoom(Hotel hotel, String nomor_kamar)
     {
-        super(hotel, nomor_kamar, isAvalable, status_kamar);
+        super(hotel, nomor_kamar);
     }
 
     @Override

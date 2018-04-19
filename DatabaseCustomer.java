@@ -8,8 +8,8 @@ import java.util.ArrayList;
  */
 public class DatabaseCustomer
 {
-    private ArrayList<Customer> list_customer;
-
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();
+    private static int LAST_CUSTOMER_ID = 0;
     /**
      * 
      * @param  Customer pelanggan baru yang akan dimasukkan
@@ -17,7 +17,15 @@ public class DatabaseCustomer
      */
     public boolean addCustomer(Customer baru)
     {
-        return list_customer.add(baru);
+        for (Customer var : CUSTOMER_DATABASE) 
+        {
+            if (var.getID() == baru.getID())
+            {
+                return false;
+            }
+        }
+        LAST_CUSTOMER_ID = baru.getID();
+        return CUSTOMER_DATABASE.add(baru);
     }
     
     /**
@@ -28,20 +36,37 @@ public class DatabaseCustomer
      */
     public boolean removeCustomer(int id)
     {
-        for (Customer cust : list_customer){
+        for (Customer cust : CUSTOMER_DATABASE){
             if (cust.id == id){
-                return list_customer.remove(cust);
+                DatabasePesanan.removePesanan(cust);
+                return CUSTOMER_DATABASE.remove(cust);
             }
         }
         return false;
     }
     
+    public Customer getCustomer(int id)
+    {
+        for (Customer cust : CUSTOMER_DATABASE){
+            if (cust.id == id){
+                return cust;
+            }
+        }
+        return null;
+    }
+
+    public static int getLastCustomerID()
+    {
+        return LAST_CUSTOMER_ID;
+    }
+
     /**
      *
      * @return  Customer list_customer
      */
-    public ArrayList<Customer> getCustomerDatabase()
+     public static ArrayList<Customer> getCustomerDatabase()
     {
-        return list_customer;
+        return CUSTOMER_DATABASE;
     }
+
 }

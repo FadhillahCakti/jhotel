@@ -25,13 +25,6 @@ public class Customer
      * @param int id pelanggan
      * @param String nama pelanggan
      */
-    public Customer(int id, String nama)
-    {
-        // initialise instance variables
-        this.id = id;
-        this.nama = nama;
-    }
-
     public Customer(int id, String nama, int tanggal, int bulan, int tahun)
     {
         // initialise instance variables
@@ -44,6 +37,14 @@ public class Customer
     {
         // initialise instance variables
         this.id = id;
+        this.nama = nama;
+        this.dob = dob;
+    }
+
+    public Customer(String nama, Date dob)
+    {
+        // initialise instance variables
+        this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.dob = dob;
     }
@@ -85,17 +86,16 @@ public class Customer
         this.dob = dob;
     }
 
+
     public void setEmail(String email)
     {
-        Pattern pattern = Pattern.compile("/[a-z]{2}\\-[0-9]{3}", 5);
-        Matcher matcher = pattern.matcher("aa098hkasjdh786sda sdb76ads");
+        Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
 
-        while (matcher.find())
+        if (matcher.find())
         {
-            System.out.println(matcher.group()+"");
+            this.email = email;
         }
-
-        this.email = email;
     }
     
     /**
@@ -141,6 +141,11 @@ public class Customer
                     "\nE-Mail         : "+this.email+
                     "\nDate of Birth  : "+format.format(this.dob)+
                     "\n";
+  if (DatabasePesanan.getPesananAktif(this) != null)
+        {
+            s += "Booking order is in progress\n";
+        }
 
         return s;
-    }}
+    }
+}

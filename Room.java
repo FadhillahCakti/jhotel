@@ -94,7 +94,7 @@ public abstract class Room
                     "\nStatus Kamar : "+this.status_kamar+
                     "\n";
 
-        if (!isAvalable)
+        if (status_kamar != StatusKamar.Vacant)
         {
             s +=    "Pelanggan      : "+this.pesan.getPelanggan().getNama()+"\n";
         }
