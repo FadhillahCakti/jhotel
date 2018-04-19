@@ -25,7 +25,7 @@ public class Customer
      * @param int id pelanggan
      * @param String nama pelanggan
      */
-    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
+    public Customer(int id, String nama, int tanggal, int bulan, int tahun, String email)
     {
         // initialise instance variables
         this.id = id;

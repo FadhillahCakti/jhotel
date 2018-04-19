@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 /**
  *Class DatabasePesanan.
  *
@@ -10,8 +11,8 @@ import java.util.ArrayList;
 public class DatabasePesanan
 {
     // instance variables - replace the example below with your own
-    private ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>();
-    private int LAST_PESANAN_ID = 0;
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<Pesanan>();
+    private static int LAST_PESANAN_ID = 0;
 
     /**
      * addPesanan method
@@ -20,7 +21,7 @@ public class DatabasePesanan
      * @param  Pesanan pesanan baru yang akan di tambahkan ke database
      * @return boolean apakah penambahan ke database sukses
      */
-    public boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru)
     {
         if (getPesananAktif(baru.getPelanggan()) != null)
         {
@@ -40,7 +41,7 @@ public class DatabasePesanan
      * @param  Pesanan pesanan yang ingin dihapuskan dari database
      * @return boolean apakah penghapusan pesanan dari database sukses
      */
-    public boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {
         if (pesan.getStatusDiproses())
         {
@@ -56,7 +57,7 @@ public class DatabasePesanan
      * @param  Customer pelanggan yang pesanannya ingin diambil dari database
      * @return pesanan pesanan yang dipesan oleh customer param
      */
-    public Pesanan getPesananAktif(Customer pelanggan)
+    public static Pesanan getPesananAktif(Customer pelanggan)
     {
         for (Pesanan var : PESANAN_DATABASE) {
             if (var.getPelanggan().equals(pelanggan)) {
@@ -73,7 +74,7 @@ public class DatabasePesanan
         return null;
     }
 
-    public Pesanan getPesanan(int id)
+    public static Pesanan getPesanan(int id)
     {
         for (Pesanan var : PESANAN_DATABASE) {
             if (var.getID() == id) {
@@ -83,7 +84,7 @@ public class DatabasePesanan
         return null;
     }
     
-    public Pesanan getPesanan(Room kamar)
+    public static Pesanan getPesanan(Room kamar)
     {
         for (Pesanan var : PESANAN_DATABASE) {
             if (var.getRoom().equals(kamar)) {
@@ -93,7 +94,7 @@ public class DatabasePesanan
         return null;
     }
 
-    public void removePesanan(Customer pelanggan)
+    public static void removePesanan(Customer pelanggan)
     {
         for (Pesanan var : PESANAN_DATABASE) {
             if (var.getPelanggan().equals(pelanggan)) {
@@ -108,12 +109,12 @@ public class DatabasePesanan
      *
      * @return  Pesanan[] list_customer
      */
-    public ArrayList<Pesanan> getPesananDatabase()
+    public static ArrayList<Pesanan> getPesananDatabase()
     {
         return PESANAN_DATABASE;
     }
 
-    public int getLastPesananID()
+    public static int getLastPesananID()
     {
         return LAST_PESANAN_ID;
     }

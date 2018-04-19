@@ -11,13 +11,13 @@ import java.util.ArrayList;
 public class DatabaseHotel
 {
     //instance variables
-    private ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<Hotel>();
-    private int LAST_HOTEL_ID;
+    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<Hotel>();
+    private static int LAST_HOTEL_ID;
 
-    public boolean addHotel(Hotel baru)
+    public static boolean addHotel(Hotel baru)
     {
         for (Hotel var : HOTEL_DATABASE) {
-            if (var.getID() == baru.getID())
+            if (var.getID() == baru.getID() || var.getLokasi().equals(baru.getLokasi()))
             {
                 return false;
             }
@@ -26,7 +26,7 @@ public class DatabaseHotel
         return HOTEL_DATABASE.add(baru);
     }
 
-    public  Hotel getHotel(int id)
+    public static Hotel getHotel(int id)
     {
         for (Hotel var : HOTEL_DATABASE) {
             if (var.getID()==id)
@@ -38,7 +38,7 @@ public class DatabaseHotel
         return null;
     }
 
-    public boolean removeHotel(int id)
+    public static boolean removeHotel(int id)
     {
         for (Hotel var : HOTEL_DATABASE) {
             if (var.getID()==id)
@@ -55,12 +55,12 @@ public class DatabaseHotel
         return false;
     }
 
-    public int getLastHotelID()
+    public static int getLastHotelID()
     {
         return LAST_HOTEL_ID;
     }
 
-    public ArrayList<Hotel> getHotelDatabase()
+    public static ArrayList<Hotel> getHotelDatabase()
     {
         return HOTEL_DATABASE;
     }

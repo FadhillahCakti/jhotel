@@ -13,7 +13,7 @@ public class Administrasi
 
     }
 
-    public void pesananDitugaskan(Pesanan pesan, Room kamar)
+    public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(true);
@@ -22,40 +22,41 @@ public class Administrasi
         roomAmbilPesanan(kamar);
     }
 
-    public void roomAmbilPesanan(Room kamar)
+    public static void roomAmbilPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Booked);
     }
 
-    public void roomLepasPesanan(Room kamar)
+    public static void roomLepasPesanan(Room kamar)
     {
         kamar.setStatusKamar(StatusKamar.Vacant);
     }
 
-    public void pesananDibatalkan(Room kamar)
+    public static void pesananDibatalkan(Room kamar)
     {
-        kamar.getPesanan(kamar).setStatusSelesai(false);
-        kamar.getPesanan(kamar).setStatusDiproses(false);
+        DatabasePesanan.getPesanan(kamar).setStatusSelesai(false);
+        DatabasePesanan.getPesanan(kamar).setStatusDiproses(false);
         roomLepasPesanan(kamar);
     }
 
-    public void pesananSelesai(Room kamar)
+    public static void pesananSelesai(Room kamar)
     {
-        kamar.getPesanan(kamar).setStatusSelesai(true);
-        kamar.getPesanan(kamar).setStatusDiproses(false);
+        DatabasePesanan.getPesanan(kamar).setStatusSelesai(true);
+        DatabasePesanan.getPesanan(kamar).setStatusDiproses(false);
         roomLepasPesanan(kamar);
     }
 
-    public void pesananDibatalkan(Pesanan pesan)
+    public static void pesananDibatalkan(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());
 
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
         pesan.setStatusAktif(false);
     }
 
-    public void pesananSelesai(Pesanan pesan)
+    public static void pesananSelesai(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());
 

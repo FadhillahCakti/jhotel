@@ -15,11 +15,11 @@ public class DatabaseCustomer
      * @param  Customer pelanggan baru yang akan dimasukkan
      * @return penambahan customer dengan tipe boolean 
      */
-    public boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru)
     {
         for (Customer var : CUSTOMER_DATABASE) 
         {
-            if (var.getID() == baru.getID())
+            if (var.getID() == baru.getID() || var.getEmail().equals(baru.getEmail()))
             {
                 return false;
             }
@@ -34,7 +34,7 @@ public class DatabaseCustomer
      * @param  int id pelanggan yang akan dihapus
      * @return penghapusan customer dengan tipe boolean 
      */
-    public boolean removeCustomer(int id)
+    public static boolean removeCustomer(int id)
     {
         for (Customer cust : CUSTOMER_DATABASE){
             if (cust.id == id){
@@ -45,7 +45,7 @@ public class DatabaseCustomer
         return false;
     }
     
-    public Customer getCustomer(int id)
+    public static Customer getCustomer(int id)
     {
         for (Customer cust : CUSTOMER_DATABASE){
             if (cust.id == id){

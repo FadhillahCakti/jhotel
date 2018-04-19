@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Kelas DatabaseRoom 
  *
@@ -9,9 +11,9 @@
  public class DatabaseRoom
 {
     //instance variables
-    private ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
+    private static ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
 
-    public boolean addRoom(Room baru)
+    public static boolean addRoom(Room baru)
     {
         if (baru.getHotel() != null)
         {
@@ -26,7 +28,7 @@
         return false;
     }
 
-    public Room getRoom(Hotel hotel, String nomor_kamar)
+    public static Room getRoom(Hotel hotel, String nomor_kamar)
     {
         for (Room var : ROOM_DATABASE) {
             if (var.getHotel().equals(hotel) && var.getNomorKamar().equals(nomor_kamar))
@@ -37,7 +39,7 @@
         return null;
     }
 
-    public ArrayList<Room> getRoomsFromHotel(Hotel hotel)
+    public static ArrayList<Room> getRoomsFromHotel(Hotel hotel)
     {
         ArrayList<Room> res = new ArrayList<Room>();
 
@@ -50,7 +52,7 @@
         return res;
     }
 
-    public ArrayList<Room> getVacantRooms()
+    public static ArrayList<Room> getVacantRooms()
     {
         ArrayList<Room> res = new ArrayList<Room>();
 
@@ -63,7 +65,7 @@
         return res;
     }
 
-    public boolean removeRoom(Hotel hotel, String nomor_kamar)
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
     {
         Room tempRoom = getRoom(hotel, nomor_kamar);
 
@@ -79,7 +81,7 @@
         return false;
     }
 
-    public ArrayList<Room> getRoomDatabase()
+    public static ArrayList<Room> getRoomDatabase()
     {
         return ROOM_DATABASE;
     }

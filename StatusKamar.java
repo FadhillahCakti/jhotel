@@ -6,7 +6,7 @@
  * @version 1.2
  * @since 10-3-18
  */
-enum StatusKamar
+public enum StatusKamar
 {
     //Booked, Processed, Vacant;
     Booked("Booked"), Processed("Processed"), Vacant("Vacant");
