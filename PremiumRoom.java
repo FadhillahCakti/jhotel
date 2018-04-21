@@ -16,7 +16,7 @@ public class PremiumRoom extends Room
     }
 
     @Override
-    public TipeKamar getTipeKamar() 
+    public TipeKamar getTipeKamar()
     {
         return TIPE_KAMAR;
     }

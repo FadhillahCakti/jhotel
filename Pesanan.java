@@ -45,7 +45,7 @@ public class Pesanan
     {
         return this.biaya;
     }
-    
+
     /**
      * getPelanggan method
      * accessor objek ini untuk variable pelanggan
@@ -56,7 +56,7 @@ public class Pesanan
     {
         return this.pelanggan;
     }
-    
+
     /**
      * getStatusDiproses method
      * accessor objek ini untuk variable isDiproses
@@ -67,7 +67,7 @@ public class Pesanan
     {
         return this.isDiproses;
     }
-    
+
     /**
      * getStatusSelesai method
      * accessor objek ini untuk variable isSelesai
@@ -119,7 +119,7 @@ public class Pesanan
     {
         this.tanggalPesan = tanggalPesan;
     }
-    
+
     /**
      * setBiaya method
      * mutator objek ini untuk variable biaya
@@ -130,7 +130,7 @@ public class Pesanan
     {
         this.biaya = this.kamar.getDailyTariff() * this.jumlahHari;
     }
-    
+
     /**
      * getPelanggan method
      * mutator objek ini untuk variable pelanggan
@@ -141,7 +141,7 @@ public class Pesanan
     {
         this.pelanggan = pelanggan;
     }
-    
+
     /**
      * setStatusDiproses method
      * mutator objek ini untuk variable isDiproses
@@ -152,7 +152,7 @@ public class Pesanan
     {
         this.isDiproses = diproses;
     }
-    
+
     /**
      * setStatusSelesai method
      * mutator objek ini untuk variable isSelesai

@@ -21,11 +21,11 @@ public class DatabasePesanan
      * @param  Pesanan pesanan baru yang akan di tambahkan ke database
      * @return boolean apakah penambahan ke database sukses
      */
-    public static boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
     {
         if (getPesananAktif(baru.getPelanggan()) != null)
         {
-            return false;
+            throw new PesananSudahAdaException(baru);
         }
         else
         {
@@ -33,7 +33,7 @@ public class DatabasePesanan
             return PESANAN_DATABASE.add(baru);
         }
     }
-    
+
     /**
      * removePesanan method
      * method untuk menghapus pesanan pada database
@@ -49,7 +49,7 @@ public class DatabasePesanan
         }
         return PESANAN_DATABASE.remove(pesan);
     }
-    
+
     /**
      * getPesanan method
      * accessor objek ini untuk variable pesanan pada pesanan_list
@@ -65,10 +65,6 @@ public class DatabasePesanan
                 {
                     return var;
                 }
-                else
-                {
-                    break;
-                }
             }
         }
         return null;
@@ -83,7 +79,7 @@ public class DatabasePesanan
         }
         return null;
     }
-    
+
     public static Pesanan getPesanan(Room kamar)
     {
         for (Pesanan var : PESANAN_DATABASE) {
@@ -94,15 +90,25 @@ public class DatabasePesanan
         return null;
     }
 
-    public static void removePesanan(Customer pelanggan)
+    public static boolean removePesanan(Customer pelanggan) throws PesananTidakDitemukanException
     {
+        boolean end = false;
+
         for (Pesanan var : PESANAN_DATABASE) {
             if (var.getPelanggan().equals(pelanggan)) {
-                removePesanan(var);
+                end = removePesanan(var);
             }
         }
+
+        if (end)
+        {
+            return true;
+        }
+
+        throw new PesananTidakDitemukanException(pelanggan);
+        //return false;
     }
-    
+
     /**
      * getPesananDatabase method
      * accessor objek ini untuk variable PESANAN_DATABASE

@@ -16,7 +16,7 @@ public class Hotel
 
     /**
      * Constructor for objects of class Hotel
-     * 
+     *
      * @param String nama hotel
      * @param Lokasi Lokasi hotel
      * @param int Bintang hotel

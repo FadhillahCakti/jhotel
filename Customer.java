@@ -20,33 +20,13 @@ public class Customer
     protected String email;
     protected Date dob;
 
-    /**
-     * Constructor for objects of class Customer
-     * @param int id pelanggan
-     * @param String nama pelanggan
-     */
-    public Customer(int id, String nama, int tanggal, int bulan, int tahun, String email)
-    {
-        // initialise instance variables
-        this.id = id;
-        this.nama = nama;
-        this.dob = new GregorianCalendar(tahun, bulan, tanggal).getTime();
-    }
-
-    public Customer(int id, String nama, Date dob)
-    {
-        // initialise instance variables
-        this.id = id;
-        this.nama = nama;
-        this.dob = dob;
-    }
-
-    public Customer(String nama, Date dob)
+    public Customer(String nama, Date dob, String email)
     {
         // initialise instance variables
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.dob = dob;
+        setEmail(email);
     }
 
     /**
@@ -59,7 +39,7 @@ public class Customer
     {
         return this.id;
     }
-    
+
     /**
      * getNama method
      * mengambil nama pada objek ini
@@ -86,7 +66,6 @@ public class Customer
         this.dob = dob;
     }
 
-
     public void setEmail(String email)
     {
         Pattern pattern = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
@@ -97,7 +76,7 @@ public class Customer
             this.email = email;
         }
     }
-    
+
     /**
      * setID method
      * Set id pelanggan untuk objek ini
@@ -108,8 +87,8 @@ public class Customer
     {
         this.id = id;
     }
-    
-     /**
+
+    /**
      * setNama method
      * set nama pelanggan untuk objek ini
      *
@@ -120,7 +99,7 @@ public class Customer
         this.nama = nama;
     }
 
-     /**
+    /**
      * PrintData method
      *
      * method ini akan mencetak nama pelanggan di console
@@ -137,11 +116,12 @@ public class Customer
         SimpleDateFormat format = new SimpleDateFormat("dd MMMM yyyy");
 
         String s =  "\nCustomer ID    : "+this.id+
-                    "\nName           : "+this.nama+
-                    "\nE-Mail         : "+this.email+
-                    "\nDate of Birth  : "+format.format(this.dob)+
-                    "\n";
-  if (DatabasePesanan.getPesananAktif(this) != null)
+                "\nName           : "+this.nama+
+                "\nE-Mail         : "+this.email+
+                "\nDate of Birth  : "+format.format(this.dob)+
+                "\n";
+
+        if (DatabasePesanan.getPesananAktif(this) != null)
         {
             s += "Booking order is in progress\n";
         }

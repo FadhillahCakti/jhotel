@@ -8,21 +8,23 @@ import java.util.ArrayList;
  * Since 10-3-18
  */
 
- public class DatabaseRoom
+public class DatabaseRoom
 {
     //instance variables
     private static ArrayList<Room> ROOM_DATABASE = new ArrayList<Room>();
 
-    public static boolean addRoom(Room baru)
+    public static boolean addRoom(Room baru) throws RoomSudahAdaException
     {
         if (baru.getHotel() != null)
         {
             for (Room var : ROOM_DATABASE) {
-                if (var.getNomorKamar().equals(baru.getNomorKamar()))
+                if ( var.getNomorKamar().equals(baru.getNomorKamar()) && var.getHotel().equals(baru.getHotel()))
                 {
-                    return false;
+                    throw new RoomSudahAdaException(baru);
+                    //return false;
                 }
             }
+
             return ROOM_DATABASE.add(baru);
         }
         return false;
@@ -36,6 +38,7 @@ import java.util.ArrayList;
                 return var;
             }
         }
+
         return null;
     }
 
@@ -49,6 +52,7 @@ import java.util.ArrayList;
                 res.add(var);
             }
         }
+
         return res;
     }
 
@@ -62,10 +66,11 @@ import java.util.ArrayList;
                 res.add(var);
             }
         }
+
         return res;
     }
 
-    public static boolean removeRoom(Hotel hotel, String nomor_kamar)
+    public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException
     {
         Room tempRoom = getRoom(hotel, nomor_kamar);
 
@@ -78,7 +83,9 @@ import java.util.ArrayList;
             }
             return ROOM_DATABASE.remove(tempRoom);
         }
-        return false;
+
+        throw new RoomTidakDitemukanException(hotel, nomor_kamar);
+        //return false;
     }
 
     public static ArrayList<Room> getRoomDatabase()

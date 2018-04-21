@@ -59,9 +59,9 @@ public class Administrasi
     public static void pesananSelesai(Pesanan pesan)
     {
         roomLepasPesanan(pesan.getRoom());
-
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
+        pesan.setRoom(null);
         pesan.setStatusAktif(false);
     }
 }

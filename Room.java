@@ -8,19 +8,25 @@
  */
 public abstract class Room
 {
+    //instance variable
     private Hotel hotel;
     private String nomor_kamar;
     protected double dailyTariff;
     private StatusKamar status_kamar;
-    private Pesanan pesan;
-    
+
     public Room(Hotel hotel, String nomor_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
-        this.dailyTariff = dailyTariff;
         this.status_kamar = StatusKamar.Vacant;
-        this.pesan = pesan;
+    }
+
+    //Constructor Kelas room
+    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    {
+        this.hotel = hotel;
+        this.nomor_kamar = nomor_kamar;
+        this.status_kamar = status_kamar;
     }
 
     public Hotel getHotel()
@@ -33,7 +39,6 @@ public abstract class Room
         return this.nomor_kamar;
     }
 
-    
     public double getDailyTariff()
     {
         return this.dailyTariff;
@@ -45,12 +50,7 @@ public abstract class Room
         return this.status_kamar;
     }
 
-    public Pesanan getPesanan()
-    {
-        return this.pesan;
-    }
-
-    public abstract TipeKamar getTipeKamar ();
+    public abstract TipeKamar getTipeKamar();
 
     public void setHotel(Hotel hotel)
     {
@@ -62,7 +62,7 @@ public abstract class Room
         this.nomor_kamar = nomor_kamar;
     }
 
-    public void setDailyTariff (double dailyTariff)
+    public void setDailyTariff(Double dailyTariff)
     {
         this.dailyTariff = dailyTariff;
     }
@@ -72,33 +72,19 @@ public abstract class Room
         this.status_kamar = status_kamar;
     }
 
-    public void setPesanan(Pesanan pesan)
-    {
-        this.pesan = pesan;
-    }
-    public void printData()
-    {
-        System.out.println("Room");
-        System.out.println("Nama Hotel : "+ this.hotel.getNama());
-        System.out.println("Nomor Kamar : "+ this.nomor_kamar);
-        System.out.println("Daily Tariff : Rp."+ this.dailyTariff);
-        System.out.println("Status kamar : "+ this.status_kamar);
-        System.out.println("Tipe kamar : "+ this.getTipeKamar());
-    }
-
     public String toString()
     {
         String s =  "\nNama Hotel   : "+this.hotel.getNama()+
-                    "\nTipe Kamar   : "+this.getTipeKamar()+
-                    "\nHarga        : "+this.dailyTariff+
-                    "\nStatus Kamar : "+this.status_kamar+
-                    "\n";
+                "\nTipe Kamar   : "+this.getTipeKamar()+
+                "\nHarga        : Rp"+this.dailyTariff+
+                "\nStatus Kamar : "+this.status_kamar+
+                "\n";
 
         if (status_kamar != StatusKamar.Vacant)
         {
-            s +=    "Pelanggan      : "+this.pesan.getPelanggan().getNama()+"\n";
+            s +=    "Pelanggan    : "+ DatabasePesanan.getPesanan(this).getPelanggan().getNama()+"\n";
         }
-        
+
         return s;
     }
 }   

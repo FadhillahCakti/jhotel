@@ -8,15 +8,17 @@
 
 public class Lokasi
 {
+    //instance variable
     private float x_coord;
     private float y_coord;
     private String deskripsiLokasi;
 
     /**
-     * 
-     * @param koordinat x pada peta dengan tipe float
-     * @param koordinat y pada peta dengan tipe float
-     * @param deskripsi lokasi dengan tipe String
+     * Constructor for objects of class Lokasi
+     *
+     * @param float koordinat x pada peta
+     * @param float koordinat y pada peta
+     * @param String deskripsi lokasi
      */
     public Lokasi(float x_coord, float y_coord, String deskripsiLokasi)
     {
@@ -26,9 +28,10 @@ public class Lokasi
     }
 
     /**
-     * 
-     * @param   aksesor dengan x_coord 
-     * @return  koordinat x dengan tipe float
+     * getx method
+     * accessor objek ini untuk variable x_coord
+     *
+     * @return  float koordinat x pada peta
      */
     public float getX()
     {
@@ -36,9 +39,10 @@ public class Lokasi
     }
 
     /**
-     * 
-     * @param   aksesor untuk y_coord 
-     * @return  koordinat y dengan tipe float
+     * gety method
+     * accessor objek ini untuk variable y_coord
+     *
+     * @return  float koordinat y pada peta
      */
     public float getY()
     {
@@ -46,9 +50,10 @@ public class Lokasi
     }
 
     /**
-     * 
-     * @param   aksesor untuk deskripsi
-     * @return  deskripsi lokasi dengan tipe String
+     * getDeskripsi method
+     * accessor objek ini untuk variable deskripsiLokasi
+     *
+     * @return  String deskripsi lokasi
      */
     public String getDesksipsi()
     {
@@ -56,8 +61,10 @@ public class Lokasi
     }
 
     /**
-     * @param   mutator dengan x_coord 
-     * @return  koordinat x dengan tipe float
+     * setX method
+     * mutator objek ini untuk variable x_coord
+     *
+     * @param  float koordinat x pada pet
      */
     public void setX(float x_coord)
     {
@@ -65,9 +72,10 @@ public class Lokasi
     }
 
     /**
-     * 
-     * @param   mutator dengan y_coord 
-     * @return  koordinat y dengan tipe float
+     * setY method
+     * mutator objek ini untuk variable y_coord
+     *
+     * @param  float koordinat y pada pet
      */
     public void setY(float y_coord)
     {
@@ -75,7 +83,9 @@ public class Lokasi
     }
 
     /**
-     * 
+     * setDeskripsi method
+     * mutator objek ini untuk variable deskripsiLokasi
+     *
      * @param  String deskripsi lokasi
      */
     public void setDeskripsi(String deskripsiLokasi)
@@ -83,7 +93,7 @@ public class Lokasi
         this.deskripsiLokasi = deskripsiLokasi;
     }
 
-   /**
+    /**
      * PrintData method
      *
      * method ini akan mencetak deskripsi lokasi di console
