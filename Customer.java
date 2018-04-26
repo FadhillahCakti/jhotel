@@ -19,6 +19,17 @@ public class Customer
     protected String nama;
     protected String email;
     protected Date dob;
+    protected String password;
+
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email)
+    {
+        // initialise instance variables
+        this.id = DatabaseCustomer.getLastCustomerID() + 1;
+        this.nama = nama;
+        this.dob = dob;
+        setEmail(email);
+        this.password = password;
+    }
 
     public Customer(String nama, Date dob, String email)
     {
@@ -27,6 +38,7 @@ public class Customer
         this.nama = nama;
         this.dob = dob;
         setEmail(email);
+        this.password = password;
     }
 
     /**
