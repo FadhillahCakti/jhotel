@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=TipeKamar
+comment0.text=\r\n\ class\ enum\ TipeKamar\r\n\r\n\ @author\ Raudina\ Asrining\ Putri\r\n\ @version\ 10-03-2018\r\n
+comment1.params=deskripsi
+comment1.target=TipeKamar(java.lang.String)
+comment1.text=\r\n\ method\ TipeKamar\ merupakan\ constructor\ dari\ class\ enum\r\n\ TipeKamar\r\n\ \r\n\ @param\ tipe\ dengan\ tipe\ data\ string\ sebagai\ parameter\r\n\ method\ TipeKamar\r\n
+numComments=2

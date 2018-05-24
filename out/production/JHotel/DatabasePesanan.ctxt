@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=DatabasePesanan
+comment0.text=\r\n\ class\ DatabasePesanan\r\n\r\n\ @author\ Raudina\ Asrining\ Putri\r\n\ @version\ 10-03-2018\r\n
+comment1.params=
+comment1.target=DatabasePesanan()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ pesanan\r\n
+comment2.params=baru
+comment2.target=boolean\ addPesanan(Pesanan)
+comment2.text=\r\n\ metode\ addPesanan\r\n\ @param\ baru\r\n\ @return\r\n
+comment3.params=pesan
+comment3.target=boolean\ removePesanan(Pesanan)
+comment3.text=\r\n\ metode\ removePesanan\r\n\ @param\ pesan\r\n\ @return\r\n
+comment4.params=cust
+comment4.target=Pesanan\ getPesanan(Customer)
+comment4.text=\r\n\ metode\ untuk\ mengambil\ nilai\ pesanan\r\n\ @param\ cust\r\n
+comment5.params=
+comment5.target=java.lang.String[]\ getPesananDatabase()
+comment5.text=\r\n\ metode\ untuk\ mengambil\ database\ pesanan\r\n
+comment6.params=pesan
+comment6.target=void\ pesananDibatalkan(Pesanan)
+comment6.text=\r\n\ metode\ untuk\ membatalkan\ pesanan\r\n\ @param\ pesan\r\n
+numComments=7

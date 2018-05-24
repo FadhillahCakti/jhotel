@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=Customer
+comment1.params=id\ nama
+comment1.target=Customer(int,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ untuk\ objek\ class\ Customer\r\n\ @param\ id,nama\r\n
+comment2.params=
+comment2.target=int\ getID()
+comment2.text=\r\n\ metode\ ini\ untuk\ mengembalikan\ nilai\ id\r\n\r\n\ @return\ id\r\n
+comment3.params=
+comment3.target=java.lang.String\ getNama()
+comment3.text=\r\n\ metode\ ini\ untuk\ mengembalikan\ nilai\ nama\r\n\r\n\ @return\ nama\r\n
+comment4.params=
+comment4.target=java.lang.String\ getEmail()
+comment5.params=
+comment5.target=java.util.Date\ getDOB()
+comment6.params=id
+comment6.target=void\ setID(int)
+comment6.text=\r\n\ metode\ ini\ untuk\ menetapkan\ nilai\ id\r\n\r\n\ @param\ id\r\n
+comment7.params=nama
+comment7.target=void\ setNama(java.lang.String)
+comment7.text=\r\n\ metode\ ini\ untuk\ menetapkan\ nilai\ nama\r\n\r\n\ @param\ nama\r\n
+comment8.params=email
+comment8.target=void\ setEmail(java.lang.String)
+comment9.params=dob
+comment9.target=void\ setDOB(java.util.Date)
+numComments=10

@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Administrasi
+comment0.text=\r\n\ class\ Administrasi\r\n\r\n\ @author\ Raudina\ Asrining\ Putri\r\n\ @version\ 10-03-2018\r\n
+comment1.params=pesan\ kamar
+comment1.target=void\ pesananDitugaskan(Pesanan,\ Room)
+comment1.text=\r\n\ metode\ untuk\ memproses\ pemesanan\ kamar\r\n\ @param\ pesan,kamar\r\n
+comment2.params=pesan\ kamar
+comment2.target=void\ roomAmbilPesanan(Pesanan,\ Room)
+comment2.text=\r\n\ metode\ untuk\ memproses\ kamar\ yang\ telah\ dipesan\r\n\ @param\ pesan,kamar\r\n
+comment3.params=kamar
+comment3.target=void\ roomLepasPesanan(Room)
+comment3.text=\r\n\ metode\ untuk\ memproses\ kamar\ vacant\r\n\ @param\ kamar\r\n
+comment4.params=kamar
+comment4.target=void\ pesananDibatalkan(Room)
+comment4.text=\r\n\ metode\ untuk\ memproses\ pembatalan\ kamar\r\n\ @param\ kamar\r\n
+comment5.params=kamar
+comment5.target=void\ pesananSelesai(Room)
+comment5.text=\r\n\ metode\ untuk\ menyelesaikan\ pesanan\ kamar\r\n\ @param\ kamar\r\n
+comment6.params=pesan
+comment6.target=void\ pesananDibatalkan(Pesanan)
+comment6.text=\r\n\ metode\ untuk\ memproses\ pembatalan\ pesanan\r\n\ @param\ pesan\r\n
+comment7.params=pesan
+comment7.target=void\ pesananSelesai(Pesanan)
+comment7.text=\r\n\ metode\ untuk\ menyelesaikan\ pesanan\r\n\ @param\ pesan\r\n
+numComments=8
